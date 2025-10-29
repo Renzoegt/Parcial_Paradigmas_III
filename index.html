@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./RGT_Styles/rgt_estilos.css">
+    <title>QuizMaster</title>
+</head>
+<body>
+    <!-- Sección de Inicio -->
+    <section id="rgt-inicio" class="rgt-active">
+        <div class="rgt-container">
+            <h1 class="rgt-logo">QuizMaster</h1>
+            <p class="rgt-descripcion">Aprende jugando con nuestra plataforma de trivia educativa</p>
+            
+            <div class="rgt-categorias">
+                <div class="rgt-categoria" data-categoria="rgt-ciencias">
+                    <h3>Ciencias</h3>
+                    <p>Preguntas sobre biología, química, física y más</p>
+                </div>
+                <div class="rgt-categoria" data-categoria="rgt-historia">
+                    <h3>Historia</h3>
+                    <p>Eventos históricos, personajes y civilizaciones</p>
+                </div>
+                <div class="rgt-categoria" data-categoria="rgt-cultura">
+                    <h3>Cultura General</h3>
+                    <p>Arte, literatura, geografía y conocimientos variados</p>
+                </div>
+            </div>
+            
+            <h3>Selecciona la dificultad:</h3>
+            <div class="rgt-dificultad">
+                <button class="rgt-btn-dificultad rgt-active" data-dificultad="rgt-facil">Fácil</button>
+                <button class="rgt-btn-dificultad rgt-active" data-dificultad="rgt-medio">Medio</button>
+                <button class="rgt-btn-dificultad rgt-active" data-dificultad="rgt-dificil">Difícil</button>
+            </div>
+            
+            <button class="rgt-btn-empezar">Comenzar Quiz</button>
+        </div>
+    </section>
+    
+    <!-- Sección de Juego -->
+    <section id="rgt-juego">
+        <div class="rgt-container">
+            <div class="rgt-header-juego">
+                <h2>QuizMaster</h2>
+                <div class="rgt-puntuacion-tiempo">
+                    <div class="rgt-puntuacion">Puntos: <span id="rgt-puntos-actuales">0</span></div>
+                    <div class="rgt-tiempo">Tiempo: <span id="rgt-tiempo-restante">60</span>s</div>
+                </div>
+            </div>
+            
+            <div class="rgt-progreso">
+                <div class="rgt-progreso-barra" id="rgt-barra-progreso"></div>
+            </div>
+            
+            <div class="rgt-pregunta-container">
+                <div class="rgt-pregunta-texto" id="rgt-texto-pregunta">¿Cuál es la capital de Francia?</div>
+                
+                <div class="rgt-opciones" id="rgt-contenedor-opciones">
+                    <!-- Las opciones se generarán dinámicamente -->
+                </div>
+                
+                <div class="rgt-feedback" id="rgt-feedback-respuesta"></div>
+                
+                <button class="rgt-btn-siguiente" id="rgt-btn-siguiente">Siguiente Pregunta</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sección de Resultados -->
+    <section id="rgt-resultados">
+        <div class="rgt-container">
+            <h2 class="rgt-resultado-titulo">¡Quiz Completado!</h2>
+            <div class="rgt-puntuacion-final" id="rgt-puntuacion-final">0</div>
+            
+            <div class="rgt-resumen">
+                <h3>Resumen de tu desempeño</h3>
+                <p>Correctas: <span id="rgt-correctas-count">0</span> de <span id="rgt-total-preguntas">0</span></p>
+                <p>Tiempo utilizado: <span id="rgt-tiempo-utilizado">0</span> segundos</p>
+                <p>Puntos por tiempo: <span id="rgt-puntos-tiempo">0</span></p>
+            </div>
+            
+            <div class="rgt-tabla-puntajes">
+                <h3>Mejores Puntuaciones</h3>
+                <table id="rgt-tabla-puntajes">
+                    <thead>
+                        <tr>
+                            <th>Posición</th>
+                            <th>Nombre</th>
+                            <th>Puntuación</th>
+                            <th>Categoría</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rgt-cuerpo-tabla-puntajes">
+                        <!-- Los datos se cargarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="rgt-acciones">
+                <button class="rgt-btn-accion btn-jugar-nuevo">Jugar de Nuevo</button>
+                <button class="rgt-btn-accion btn-inicio">Volver al Inicio</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

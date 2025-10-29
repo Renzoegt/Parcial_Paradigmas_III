@@ -1,0 +1,406 @@
+:root {
+    --primary: #4361ee;
+    --secondary: #3a0ca3;
+    --accent: #7209b7;
+    --correcto: #4cc9f0;
+    --danger: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --transition: all 0.3s ease;
+        }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;        
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {            
+    background-color: #f5f7fb;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.rgt-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Secciones principales */
+section {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+section.rgt-active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Sección Inicio */
+#rgt-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.rgt-logo {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.rgt-descripcion {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    display: block;
+    
+}
+
+.rgt-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+    }
+
+.rgt-categoria {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rgt-categoria:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.rgt-categoria h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.rgt-categoria p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.rgt-dificultad {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rgt-btn-dificultad {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.rgt-btn-dificultad.active {
+    background: white;
+    color: var(--primary);
+}
+
+.rgt-btn-empezar {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: white;
+    color: var(--primary);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    box-shadow: var(--shadow);
+}
+
+.rgt-btn-empezar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Sección Juego */
+#rgt-juego {
+     padding-top: 60px;
+}
+
+.rgt-header-juego {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 20px;
+}
+
+.rgt-puntuacion-tiempo {
+    display: flex;
+    gap: 20px;
+}
+
+.rgt-puntuacion, .rgt-tiempo {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    font-weight: 600;
+}
+
+.rgt-progreso {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.rgt-progreso-barra {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.rgt-pregunta-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.rgt-pregunta-texto {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.rgt-opciones {
+    display: grid;
+    gap: 15px;
+}
+
+.rgt-opcion {
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.rgt-opcion:hover {
+    border-color: var(--primary);
+    background: rgba(67, 97, 238, 0.05);
+}
+
+.rgt-opcion.correcta {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.rgt-opcion.incorrecta {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
+}
+
+.rgt-feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+}
+
+.rgt-feedback.correcto {
+    background: #d4edda;
+    color: #155724;
+    display: block;
+}
+
+.rgt-feedback.incorrecto {
+    background: #f8d7da;
+    color: #721c24;
+    display: block;
+}
+
+.rgt-btn-siguiente {
+    display: block;
+    margin: 30px auto 0;
+    padding: 12px 30px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.btn-siguiente:hover {
+    background: var(--secondary);
+    transform: scale(1.05);
+}
+
+/* Sección Resultados */
+#rgt-resultados {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rgt-resultado-titulo {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.rgt-puntuacion-final {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 30px;
+}
+
+.rgt-resumen {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.rgt-tabla-puntajes {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 40px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.rgt-tabla-puntajes h3 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;    
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+tr:hover {
+    background: rgba(67, 97, 238, 0.05);
+}
+
+.rgt-acciones {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rgt-btn-accion {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.rgt-btn-jugar-nuevo {
+    background: var(--primary);
+    color: white;
+}
+
+.rgt-btn-inicio {
+    background: var(--light);
+    color: var(--dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .rgt-logo {
+            font-size: 3rem;
+    }
+            
+    .rgt-tagline {
+        font-size: 1.2rem;
+    }
+            
+    .rgt-categorias {
+        grid-template-columns: 1fr;
+    }
+            
+    .rgt-pregunta-texto {
+        font-size: 1.3rem;
+    }
+            
+    .rgt-header-juego {
+        flex-direction: column;
+        gap: 15px;
+    }
+            
+    .rgt-resultado-titulo {
+        font-size: 2rem;
+    }
+            
+    .rgt-puntuacion-final {
+        font-size: 3rem;
+    }
+}
